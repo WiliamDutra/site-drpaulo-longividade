@@ -1,0 +1,30 @@
+﻿---
+import Container from '@/components/ui/Container.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import ReviewCard from '@/components/ui/ReviewCard.astro';
+import { reviews } from '@/data/reviews';
+---
+
+<section id="depoimentos" class="bg-bg-alt py-16 md:py-section-gap">
+  <Container class="flex flex-col items-center text-center gap-16">
+    <SectionHeading eyebrow="Nutrologia &amp; Longevidade" align="center" class="max-w-2xl">
+      O que nossos <strong class="font-600 text-blue">pacientes dizem?</strong>
+    </SectionHeading>
+    <p class="text-[16px] text-slate max-w-xl -mt-10">
+      Depoimentos que inspiram confiança: descubra como o acompanhamento fez diferença na vida de quem confiou no tratamento.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-11 gap-y-10 text-left w-full">
+      {reviews.map((review) => (
+        <ReviewCard
+          name={review.name}
+          initial={review.initial}
+          date={review.date}
+          rating={review.rating}
+          quote={review.quote}
+          color={review.color}
+        />
+      ))}
+    </div>
+  </Container>
+</section>

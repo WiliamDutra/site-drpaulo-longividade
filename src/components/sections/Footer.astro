@@ -1,0 +1,48 @@
+﻿---
+import Container from '@/components/ui/Container.astro';
+import MedicalDisclaimer from '@/components/ui/MedicalDisclaimer.astro';
+import InstagramIcon from '@/components/icons/instagram-icon.astro';
+import { doctor, clinic, social } from '@/data/site';
+---
+
+<footer class="py-20 bg-navy-800">
+  <Container class="flex flex-col gap-12">
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="flex flex-col gap-4">
+        <img src="/img/logo-marca-semfundo.webp" alt="Instituto Longevitare" class="h-10 w-auto self-start" />
+        <span class="font-display text-xl text-white">{clinic.name}</span>
+        <p class="text-slate-light text-base">{clinic.address}</p>
+        <p class="text-slate-light text-base">{clinic.city}/{clinic.state}</p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <span class="text-sm font-600 tracking-[0.1em] uppercase text-blue-lighter">Responsável técnico</span>
+        <p class="text-white text-lg font-500">{doctor.name} — {doctor.crm}</p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <span class="text-sm font-600 tracking-[0.1em] uppercase text-blue-lighter">Redes sociais</span>
+        <a
+          href={social.doctorInstagram.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 text-white text-lg font-500 hover:text-blue-lighter transition-colors"
+        >
+          <InstagramIcon class="w-5 h-5 shrink-0" />
+          <span>Dr. Paulo: {social.doctorInstagram.handle}</span>
+        </a>
+        <a
+          href={social.instituteInstagram.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 text-white text-lg font-500 hover:text-blue-lighter transition-colors"
+        >
+          <InstagramIcon class="w-5 h-5 shrink-0" />
+          <span>Instituto: {social.instituteInstagram.handle}</span>
+        </a>
+      </div>
+    </div>
+
+    <MedicalDisclaimer />
+  </Container>
+</footer>

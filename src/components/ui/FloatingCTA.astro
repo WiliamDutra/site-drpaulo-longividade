@@ -1,0 +1,59 @@
+﻿---
+import ArrowUpRightIcon from '@/components/icons/arrow-up-right-icon.astro';
+import { buildWhatsAppLink } from '@/data/site';
+---
+
+<a
+  id="floating-cta"
+  href={buildWhatsAppLink()}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center justify-center
+         w-12 h-12 md:w-auto md:h-auto md:inline-flex md:gap-4
+         rounded-full bg-gradient-to-r from-[#0a2540] to-[#175a8a] text-white font-sans font-500
+         md:pl-7 md:pr-2 md:py-2
+         shadow-[0_6px_18px_rgba(13,43,71,0.35)]
+         opacity-0 pointer-events-none translate-y-4 transition-all duration-300 ease-out"
+  style="box-shadow: 0 0 0 0 rgba(33, 121, 173, 0.5);"
+  aria-label="Agendar minha avaliação"
+>
+  <span class="hidden md:inline">Agendar minha avaliação</span>
+  <span class="flex items-center justify-center w-full h-full text-white md:w-9 md:h-9 md:bg-white md:text-[#0a2540] rounded-full shrink-0">
+    <ArrowUpRightIcon class="w-4 h-4" />
+  </span>
+</a>
+
+<style>
+  @keyframes cta-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(33, 121, 173, 0.45); }
+    70%  { box-shadow: 0 0 0 14px rgba(33, 121, 173, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(33, 121, 173, 0); }
+  }
+  #floating-cta.visible {
+    animation: cta-pulse 2s ease-out infinite;
+  }
+</style>
+
+<script>
+  const cta = document.getElementById('floating-cta') as HTMLAnchorElement;
+  const SHOW_AFTER = 300;
+
+  function update() {
+    const scrollY = window.scrollY;
+    const footer = document.querySelector('footer');
+    const nearFooter = footer
+      ? scrollY + window.innerHeight >= footer.offsetTop - 80
+      : false;
+
+    if (scrollY > SHOW_AFTER && !nearFooter) {
+      cta.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      cta.classList.add('opacity-100', 'translate-y-0', 'visible');
+    } else {
+      cta.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      cta.classList.remove('opacity-100', 'translate-y-0', 'visible');
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+</script>

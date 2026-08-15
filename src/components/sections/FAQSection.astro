@@ -1,0 +1,31 @@
+﻿---
+import Container from '@/components/ui/Container.astro';
+import Button from '@/components/ui/Button.astro';
+import SocialProofLine from '@/components/ui/SocialProofLine.astro';
+import FAQAccordion from '@/components/ui/FAQAccordion.astro';
+import { faqItems } from '@/data/faq';
+import { buildWhatsAppLink } from '@/data/site';
+---
+
+<section id="faq" class="bg-white py-16 md:py-section-gap text-center">
+  <Container class="max-w-[1000px]">
+    <h2 class="font-display font-light text-[30px] leading-[1.12] md:text-[50px] text-navy-700 mb-6">
+      Perguntas que meus<br />pacientes <strong class="font-600 text-blue">sempre fazem</strong>
+    </h2>
+    <p class="text-[16px] text-slate max-w-xl mx-auto mb-16">
+      Antes da primeira consulta, é normal ter dúvidas. Aqui estão as respostas para as perguntas que mais recebo.
+    </p>
+
+    <div class="text-left max-w-3xl mx-auto">
+      <FAQAccordion items={faqItems} />
+    </div>
+
+    <p class="font-display font-light text-[26px] md:text-[30px] text-navy-700 mt-20 mb-9">
+      Agende sua consulta no Instituto Longevitare <strong class="font-600">e saiba como é viver com método.</strong>
+    </p>
+    <Button href={buildWhatsAppLink()} target="_blank">Agendar minha avaliação</Button>
+    <div class="flex justify-center mt-6">
+      <SocialProofLine />
+    </div>
+  </Container>
+</section>

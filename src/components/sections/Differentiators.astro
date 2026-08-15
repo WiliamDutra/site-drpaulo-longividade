@@ -1,0 +1,38 @@
+﻿---
+import Container from '@/components/ui/Container.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Button from '@/components/ui/Button.astro';
+import SocialProofLine from '@/components/ui/SocialProofLine.astro';
+import { differentiators, differentiatorsTagline } from '@/data/differentiators';
+import { buildWhatsAppLink } from '@/data/site';
+---
+
+<section class="bg-[radial-gradient(120%_90%_at_50%_0%,#123453_0%,#0a1f36_60%,#081a2e_100%)] py-16 md:py-section-gap">
+  <Container class="flex flex-col items-center text-center gap-14">
+    <SectionHeading eyebrow="Por que me escolher" align="center" dark class="max-w-2xl">
+      O que torna <strong class="font-600">meu atendimento diferente</strong>
+    </SectionHeading>
+    <p class="text-[17px] text-[#a9bfd1] max-w-xl -mt-8">
+      Atendimento <strong class="font-700 text-[#e6eef4]">especializado nas principais frentes de emagrecimento e longevidade</strong>, com foco em diagnóstico correto e tratamento efetivo.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 w-full text-left">
+      {differentiators.map((item, i) => (
+        <div class="relative overflow-hidden rounded-2xl bg-white/[0.045] border border-white/[0.09] p-8">
+          <span class="absolute left-8 top-0 w-14 h-1 rounded-b-sm bg-blue-lighter"></span>
+          <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-white/[0.08] text-[#dceaf3] font-display text-base mb-6">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <h3 class="text-xl font-700 text-white mb-3">{item.title}</h3>
+          <p class="text-[15px] text-[#9fb6c8] leading-relaxed">{item.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="font-display font-light text-[24px] md:text-[28px] text-[#e9f1f6]">
+      {differentiatorsTagline.prefix}<strong class="font-600 text-blue-lighter">{differentiatorsTagline.bold}</strong>
+    </p>
+    <Button href={buildWhatsAppLink()} target="_blank" dark>Agendar minha avaliação</Button>
+    <SocialProofLine dark />
+  </Container>
+</section>

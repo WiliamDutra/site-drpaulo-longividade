@@ -1,0 +1,58 @@
+﻿---
+import Container from '@/components/ui/Container.astro';
+import Button from '@/components/ui/Button.astro';
+import SocialProofLine from '@/components/ui/SocialProofLine.astro';
+import FloatingBadge from '@/components/ui/FloatingBadge.astro';
+import { doctor, buildWhatsAppLink, heroBadges } from '@/data/site';
+
+const gridBgStyle = `background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px); background-size: 20px 30px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%); mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);`;
+---
+
+<section class="relative pt-10 pb-10 md:pt-14 md:pb-12 overflow-hidden bg-[#f8fafc]">
+  <div class="absolute inset-0 z-0" style={gridBgStyle}></div>
+  <Container class="relative z-10">
+    <div class="grid md:grid-cols-[1fr_1.15fr] gap-10 items-start">
+      <div class="flex flex-col gap-6 max-w-[520px]">
+        <span class="inline-flex items-center gap-2.5 label-caps font-600 text-blue bg-blue/10 rounded-full px-4 py-2 w-fit">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue shrink-0"></span>
+          {doctor.name} | Nutrólogo
+        </span>
+        <h1 class="font-display font-light leading-[1.06] tracking-tight text-navy-700 text-[42px] md:text-[68px]">
+          Emagrecimento e longevidade não são milagre.<br />
+          <strong class="font-600">São método.</strong>
+        </h1>
+        <p class="text-[17px] leading-relaxed text-slate text-wrap-pretty">
+          Mais de {doctor.yearsOfPractice} anos de medicina e {doctor.patientsServed} pacientes tratados com ciência, critério clínico e acompanhamento real — não com dietas da moda.
+        </p>
+        <div>
+          <Button href={buildWhatsAppLink()} target="_blank">Agendar minha avaliação</Button>
+        </div>
+        <SocialProofLine class="pl-1" />
+      </div>
+
+      <div class="max-w-[460px] md:max-w-[600px] mx-auto md:mx-0 md:self-stretch md:flex md:flex-col md:justify-between">
+        <div class="flex items-center justify-center md:justify-end gap-3 mb-6">
+          <img src="/img/logo-marca-semfundo.webp" alt="Instituto Longevitare" class="h-14 md:h-16 w-auto" />
+          <span class="leading-tight text-right">
+            <span class="block font-display text-2xl md:text-[32px] tracking-wide text-slate">Instituto Longevitare</span>
+            <span class="block text-[10px] md:text-sm tracking-[0.14em] uppercase text-slate-light">Nutrologia e Longevidade</span>
+          </span>
+        </div>
+
+        <div class="relative">
+          <img
+            src="/img/dr-paulo-hero.webp"
+            alt="Dr. Paulo Mansur, fundador do Instituto Longevitare"
+            class="w-full h-auto"
+          />
+
+          <div class="flex flex-wrap md:block mt-4 md:mt-0">
+            <FloatingBadge text={heroBadges[0]} class="md:top-[58%] md:-left-6" />
+            <FloatingBadge text={heroBadges[1]} class="md:bottom-[16%] md:-left-4" />
+            <FloatingBadge text={heroBadges[2]} class="md:top-[46%] md:right-2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

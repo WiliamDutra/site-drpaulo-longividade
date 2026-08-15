@@ -1,0 +1,20 @@
+﻿---
+import ChevronDownIcon from '@/components/icons/chevron-down-icon.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = 'bg-bg-alt' } = Astro.props;
+---
+
+<div
+  class={[
+    'absolute left-1/2 -top-px -translate-x-1/2 w-24 h-12 rounded-b-full flex items-center justify-center text-slate-light z-10',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')}
+>
+  <ChevronDownIcon class="w-4 h-4" />
+</div>

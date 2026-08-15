@@ -1,0 +1,23 @@
+﻿---
+import StarIcon from '@/components/icons/star-icon.astro';
+
+interface Props {
+  rating?: number;
+  variant?: 'amber' | 'navy' | 'dark';
+  class?: string;
+}
+
+const { rating = 5, variant = 'navy', class: className } = Astro.props;
+
+const colors = {
+  amber: 'text-[#f5b32b]',
+  navy: 'text-navy-700',
+  dark: 'text-[#5f7d95]',
+};
+---
+
+<div class={['flex items-center gap-0.5', colors[variant], className].filter(Boolean).join(' ')} aria-label={`${rating} de 5 estrelas`}>
+  {Array.from({ length: 5 }).map((_, i) => (
+    <StarIcon class={`w-3.5 h-3.5 ${i < rating ? '' : 'opacity-25'}`} />
+  ))}
+</div>

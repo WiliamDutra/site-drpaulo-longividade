@@ -1,0 +1,42 @@
+﻿---
+import ArrowUpRightIcon from '@/components/icons/arrow-up-right-icon.astro';
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'whatsapp';
+  dark?: boolean;
+  target?: '_blank' | '_self';
+  class?: string;
+}
+
+const { href, variant = 'primary', dark = false, target, class: className } = Astro.props;
+const isWhatsapp = variant === 'whatsapp';
+---
+
+<a
+  href={href}
+  target={target}
+  rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+  class={[
+    'inline-flex items-center gap-4 font-sans font-500 rounded-full w-fit transition-shadow duration-200',
+    isWhatsapp
+      ? 'bg-whatsapp hover:bg-whatsapp-dim text-white px-8 py-4 shadow-[0_12px_26px_rgba(25,158,91,0.24)]'
+      : dark
+        ? 'bg-gradient-to-r from-[#123f66] to-[#2179ad] text-white pl-8 pr-2 py-2 shadow-[0_0_0_9px_rgba(255,255,255,0.06)]'
+        : 'btn-primary',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')}
+>
+  <span><slot /></span>
+  {
+    isWhatsapp ? (
+      <ArrowUpRightIcon class="w-4 h-4" />
+    ) : (
+      <span class="btn-primary-icon">
+        <ArrowUpRightIcon class="w-4 h-4" />
+      </span>
+    )
+  }
+</a>

@@ -1,0 +1,64 @@
+---
+import Container from '@/components/ui/Container.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Button from '@/components/ui/Button.astro';
+import SocialProofLine from '@/components/ui/SocialProofLine.astro';
+import SectionChevron from '@/components/ui/SectionChevron.astro';
+import PinIcon from '@/components/icons/pin-icon.astro';
+import ClockIcon from '@/components/icons/clock-icon.astro';
+import { clinic, buildWhatsAppLink } from '@/data/site';
+---
+
+<section class="relative bg-gradient-to-b from-[#f7f8f9] to-bg-soft py-16 md:py-section-gap">
+  <SectionChevron class="bg-[#f7f8f9]" />
+  <Container class="grid md:grid-cols-2 gap-8 md:gap-16">
+    <div>
+      <SectionHeading eyebrow="Nossa clínica de atendimento" class="mb-7">
+        Um espaço pensado <strong class="font-600 text-blue">para cuidar de você</strong>
+      </SectionHeading>
+      <p class="text-[16px] leading-relaxed text-slate max-w-sm mb-14">
+        Estrutura física própria em {clinic.city}/{clinic.state}, pensada para acompanhamento de perto — exames, avaliações e consultas acontecem no mesmo lugar.
+      </p>
+
+      <!-- Mapa do Google Maps -->
+      <div class="rounded-2xl overflow-hidden shadow-[0_18px_44px_rgba(13,43,71,0.12)] border border-[#e4eaef]">
+        <iframe
+          title="Localização do Instituto Longevitare"
+          width="100%"
+          height="340"
+          style="border:0; display:block;"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=R.+Abiail+do+Amaral+Carneiro,+85,+Enseada+do+Su%C3%A1,+Vit%C3%B3ria,+ES,+Brasil&output=embed&hl=pt-BR&z=16"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-9">
+      <!-- Foto do consultório -->
+      <div class="rounded-2xl overflow-hidden shadow-[0_18px_44px_rgba(13,43,71,0.12)]">
+        <img
+          src="/img/longevitare-001.webp"
+          alt="Consultório do Instituto Longevitare"
+          class="w-full h-[330px] object-cover object-center"
+        />
+      </div>
+
+      <!-- Endereço -->
+      <div class="flex items-start gap-3 text-[16px] leading-relaxed text-ink">
+        <PinIcon class="w-4.5 h-4.5 text-blue shrink-0 mt-0.5" />
+        <span>{clinic.address}, {clinic.city}/{clinic.state} — CEP 29050-535</span>
+      </div>
+
+      <!-- Horário -->
+      <div class="flex items-center gap-3 text-[16px] text-ink">
+        <ClockIcon class="w-4.5 h-4.5 text-blue shrink-0" />
+        <span>Horário de atendimento: {clinic.hours}</span>
+      </div>
+
+      <Button href={buildWhatsAppLink()} target="_blank">Agendar minha avaliação</Button>
+      <SocialProofLine />
+    </div>
+  </Container>
+</section>

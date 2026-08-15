@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Adriano Reis - Otorrinolaringologista</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#e8e1e0",
+            "surface-dim": "#e0d8d8",
+            "surface-container-low": "#faf2f1",
+            "tertiary": "#080603",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-tint": "#485e8d",
+            "on-secondary-container": "#357007",
+            "on-tertiary-fixed-variant": "#49473f",
+            "surface-bright": "#fff8f7",
+            "inverse-surface": "#333030",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#b0c6fc",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#2f4674",
+            "outline-variant": "#c5c6d0",
+            "on-tertiary-fixed": "#1d1b15",
+            "primary-container": "#001d4a",
+            "secondary-container": "#aef27f",
+            "tertiary-container": "#211f18",
+            "on-surface-variant": "#44474f",
+            "on-secondary-fixed-variant": "#235100",
+            "primary": "#000619",
+            "on-tertiary-container": "#8b867d",
+            "inverse-on-surface": "#f7efee",
+            "on-secondary-fixed": "#0a2100",
+            "on-primary-fixed": "#001a43",
+            "whatsapp-green": "#25D366",
+            "on-primary-container": "#7086b9",
+            "secondary-fixed-dim": "#95d869",
+            "surface-container-high": "#eee6e6",
+            "rating-gold": "#FFB800",
+            "secondary-fixed": "#b0f582",
+            "background": "#fff8f7",
+            "tertiary-fixed-dim": "#cbc6bb",
+            "error": "#ba1a1a",
+            "primary-fixed": "#d9e2ff",
+            "on-surface": "#1e1b1b",
+            "secondary": "#316b01",
+            "surface": "#fff8f7",
+            "surface-container-highest": "#e8e1e0",
+            "outline": "#757780",
+            "on-background": "#1e1b1b",
+            "on-secondary": "#ffffff",
+            "surface-container": "#f4ecec",
+            "surface-off-white": "#F8F9FA",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#e8e2d7",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#b0c6fc"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "stack-md": "16px",
+            "section-padding": "80px",
+            "stack-lg": "32px",
+            "container-max": "1200px",
+            "stack-sm": "8px"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Manrope"],
+            "body-md": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "headline-lg": ["Manrope"],
+            "label-md": ["Hanken Grotesk"],
+            "headline-md": ["Manrope"],
+            "headline-xl": ["Manrope"],
+            "caption": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased pt-20">
+<!-- TopNavBar Component -->
+<nav class="bg-surface/90 dark:bg-surface-container/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+        Dr. Adriano Reis
+      </div>
+<div class="hidden md:flex gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-all duration-300" href="#inicio">Início</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#tratamentos">Tratamentos</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#contato">Contato</a>
+</div>
+<a class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:opacity-80 transition-opacity flex items-center gap-2" href="https://api.whatsapp.com/send?phone=5517996157015&amp;text=Ol%C3%A1,%20eu%20vim%20pelo%20site%20do%20Dr.%20Adriano%20Reis." target="_blank">
+<span>Agendar Consulta</span>
+</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="py-section-padding px-gutter bg-surface-container-low overflow-hidden" id="inicio">
+<div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center relative">
+<div class="z-10">
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary mb-stack-md">
+          Dr. Adriano Reis <br/>
+<span class="font-headline-lg text-primary-container">Otorrinolaringologista em São José do Rio Preto</span>
+</h1>
+<div class="flex flex-col gap-stack-sm mb-stack-lg">
+<span class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span> Especialista em reabilitação auditiva.</span>
+<span class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span> Cirurgia do ouvido crônico</span>
+<span class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span> Otorrinolaringologia em geral</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="bg-whatsapp-green text-white font-label-md px-6 py-3 rounded-full flex items-center gap-2 shadow-[0_10px_25px_rgba(0,29,74,0.1)] hover:opacity-90 transition-opacity" href="https://api.whatsapp.com/send?phone=5517996157015&amp;text=Ol%C3%A1,%20eu%20vim%20pelo%20site%20do%20Dr.%20Adriano%20Reis.">
+<span class="material-symbols-outlined">forum</span>
+            Whatsapp
+          </a>
+<a class="border-2 border-primary text-primary font-label-md px-6 py-3 rounded-full flex items-center gap-2 hover:bg-primary hover:text-white transition-colors" href="tel:17996157015">
+<span class="material-symbols-outlined">call</span>
+            17 99615-7015
+          </a>
+</div>
+</div>
+<div class="relative flex justify-center md:justify-end">
+<img alt="Dr. Adriano Reis" class="max-w-full h-auto rounded-xl shadow-lg relative z-10 object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvU_r9hr3xY4kEFpxPEavlFGyhhsAnE8G1LuM13oHoWgXsAv4ML2jiyBx5zsCR6s6j937FkNOre8zKY_z7A3Goi9sTLQp_XuyWav_59jfq22HqYETPhAvjM8Z-DXo_g0U46fwIrcUbXp7iOGkid0nrKLGWf0nbi_s3hDFJag5WQe9ihaTOvn8joh5Tm3tSAjqAVoubHQZOiz5a2ye8pHnmrzWIKzVnF-4s2UWT2sjcmGH__4_Jrg3LKQw" style="aspect-ratio: 0.67;"/>
+<div class="absolute inset-0 bg-primary opacity-5 rounded-full blur-3xl transform scale-150 -translate-y-10 z-0"></div>
+</div>
+</div>
+</header>
+<!-- Avaliações Section -->
+<section class="py-section-padding px-gutter bg-surface-off-white">
+<div class="max-w-container mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Avaliações Dr. Adriano Reis</h2>
+<div class="flex items-center justify-center gap-4">
+<div class="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-sm">
+<span class="font-bold text-lg" style="color: #4285F4;">G</span>
+</div>
+<div class="text-left">
+<p class="font-headline-md text-headline-md text-primary leading-tight">5.0</p>
+<div class="flex text-rating-gold text-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white p-6 rounded-xl border border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold">D</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Daniela. Araujo</p>
+<div class="flex text-rating-gold text-xs">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Olá sou mãe do José Arthur paciente do Dr.adriano reis!!! Meu filho fez a cirurgia do implante coclear com ele, excelente médico..."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-6 rounded-xl border border-outline-variant/30 shadow-sm hidden md:block">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold">L</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Leandra Mara</p>
+<div class="flex text-rating-gold text-xs">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Meu filho Lucas fez duas cirurgias de timpanoplastia com o Dr Adriano. Ouvido direito e esquerdo . Só tenho Gratidão..."</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-6 rounded-xl border border-outline-variant/30 shadow-sm hidden md:block">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold">M</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Mariana Lopes</p>
+<div class="flex text-rating-gold text-xs">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Meu filho Gustavo é paciente do Dr Adriano já faz um tempinho … e tudo que passamos foi muito mais leve com a confiança..."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Sobre o Dr Section -->
+<section class="py-section-padding px-gutter bg-surface">
+<div class="max-w-container mx-auto bg-surface-container-low rounded-xl p-8 md:p-12 shadow-sm border border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-start">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Dr. Adriano Reis<br/>Otorrinolaringologista</h2>
+<p class="font-caption text-caption text-on-surface-variant mb-6 uppercase tracking-wider font-bold">CRM/SP 180.092 | RQE 77962</p>
+<p class="font-body-lg text-body-lg text-on-surface mb-stack-lg font-medium">Especialista em reabilitação auditiva e cirurgia do ouvido</p>
+<div class="mb-stack-lg p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
+<p class="font-label-md text-label-md text-primary mb-2">Agende sua consulta com Dr. Adriano Reis</p>
+<div class="flex flex-wrap gap-4 mt-4">
+<a class="bg-whatsapp-green text-white font-label-md px-4 py-2 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity text-sm" href="https://api.whatsapp.com/send?phone=5517996157015">
+<span class="material-symbols-outlined text-sm">forum</span> Whatsapp
+              </a>
+<a class="border border-primary text-primary font-label-md px-4 py-2 rounded-full flex items-center gap-2 hover:bg-primary hover:text-white transition-colors text-sm" href="tel:17996157015">
+<span class="material-symbols-outlined text-sm">call</span> 17 99615-7015
+              </a>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 border-b border-outline-variant/30 pb-2">Formação e Currículo</h3>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">school</span> Graduação em Medicina pela Faculdade Atenas (2013)</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">local_hospital</span> Residência Médica em Otorrinolaringologia e Cirurgia Cérvico Fácil pelo Instituto Maniglia (2019)</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">verified</span> Título de Especialista pela Associação Brasileira de Otorrinolaringologia e Cirurgia Cérvico-Facial – ABORL (2019)</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">workspace_premium</span> Fellow de Otologia Clínica e Cirúrgica pela Clínica Paparella (2019)</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">clinical_notes</span> Preceptor dos residentes da disciplina de otorrinolaringologia da FAMERP.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Tratamentos Section (Reabilitação Auditiva) -->
+<section class="py-section-padding px-gutter bg-surface-variant/30" id="tratamentos">
+<div class="max-w-container mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-start">
+<!-- Video/Info Column -->
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Entenda como é feita a Reabilitação Auditiva</h2>
+<!-- Video Placeholder -->
+<div class="bg-tertiary aspect-video rounded-xl mb-stack-md flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-md">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" data-alt="A modern, high-quality medical illustration of the human ear and cochlear implant, rendered in a clean, clinical aesthetic with soft lighting and cool blue tones, professional healthcare setting style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmApRZNb4yQON0SDHGm70CNWZnI-Oj3_IkA2u0LlRrkuKzkJ5B0nvS7kpKp2gowR8SN4NrpouNqjH0WMWYrI-wpCbpcLhTGFodHs7e1ibEijL85KBXs1AnpCXI4WYiYQYexPX3UCICLGv9zpnL1HwGHTM21eEdQAz_x_7eQWHVamhFxSxWK7cB00wXOhiSAOW4TMdPAIqtCGo_QMChIiMavTKE9PI25JlEEVR3seFw4NogizhKTj2R"/>
+<div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all border border-white/40 z-10">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<p class="absolute bottom-4 left-4 text-white font-label-md drop-shadow-md z-10">Assista ao vídeo</p>
+</div>
+<div class="p-6 bg-white rounded-xl shadow-sm border border-outline-variant/30 mb-stack-lg">
+<p class="font-label-md text-label-md text-on-surface mb-4">Agende sua consulta com Dr. Adriano Reis</p>
+<div class="flex gap-4">
+<a class="bg-whatsapp-green text-white px-4 py-2 rounded-full flex items-center gap-2 hover:opacity-90 text-sm font-bold w-fit" href="https://api.whatsapp.com/send?phone=5517996157015">
+<span class="material-symbols-outlined text-sm">forum</span> Whatsapp
+                </a>
+</div>
+</div>
+</div>
+<!-- FAQ Column -->
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Dúvidas frequentes</h3>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<details class="group bg-white rounded-lg border border-outline-variant/30 overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex cursor-pointer items-center justify-between p-4 font-label-md text-on-surface hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-4">
+<span class="text-outline font-bold opacity-50">01</span>
+<span>O que é o implante coclear?</span>
+</div>
+<span class="transition duration-300 group-open:-rotate-180 material-symbols-outlined text-primary">expand_more</span>
+</summary>
+<div class="bg-surface-container-low p-4 text-body-md text-on-surface-variant border-t border-outline-variant/20">
+                O implante coclear é um dispositivo eletrônico médico implantado cirurgicamente que é usado para tratar a perda auditiva severa a profunda em pessoas que não se beneficiam de aparelhos auditivos convencionais.
+              </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group bg-white rounded-lg border border-outline-variant/30 overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex cursor-pointer items-center justify-between p-4 font-label-md text-on-surface hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-4">
+<span class="text-outline font-bold opacity-50">02</span>
+<span>O que são os aparelhos auditivos?</span>
+</div>
+<span class="transition duration-300 group-open:-rotate-180 material-symbols-outlined text-primary">expand_more</span>
+</summary>
+<div class="bg-surface-container-low p-4 text-body-md text-on-surface-variant border-t border-outline-variant/20">
+                Os aparelhos auditivos são dispositivos eletrônicos usados externamente para amplificar e melhorar os sons para pessoas com perda auditiva.
+              </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group bg-white rounded-lg border border-outline-variant/30 overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex cursor-pointer items-center justify-between p-4 font-label-md text-on-surface hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-4">
+<span class="text-outline font-bold opacity-50">03</span>
+<span>Todos os casos de perda auditiva podem ser recuperados?</span>
+</div>
+<span class="transition duration-300 group-open:-rotate-180 material-symbols-outlined text-primary">expand_more</span>
+</summary>
+<div class="bg-surface-container-low p-4 text-body-md text-on-surface-variant border-t border-outline-variant/20">
+                Quase todas as perdas auditivas são passíveis de tratamento, cursando com uma melhora significativa da qualidade auditiva. A recuperação auditiva depende da causa, gravidade e tipo de perda auditiva.
+              </div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Component -->
+<footer class="bg-surface-container-highest dark:bg-tertiary-container w-full border-t border-outline-variant flat no shadows transition-colors duration-200 mt-auto" id="contato">
+<div class="flex flex-col md:flex-row justify-between items-start gap-stack-lg px-gutter py-section-padding max-w-container mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-2">
+          Dr. Adriano Reis
+        </div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          © 2024 Dr. Adriano Reis - Otorrinolaringologista. CRM/SP 180.292 | RQE 77952
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary shrink-0">location_on</span>
+           Rua Cila, nº 3158, Bairro Redentora, São José do Rio Preto/SP Cep 15015-110
+        </p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md font-bold text-primary mb-2">Links</h4>
+<a class="text-on-surface-variant hover:text-primary underline transition-colors font-body-md text-body-md" href="#tratamentos">Tratamentos</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-colors font-body-md text-body-md" href="#">Dúvidas Frequentes</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-colors font-body-md text-body-md" href="#">Políticas de Privacidade</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-colors font-body-md text-body-md" href="#">Termos de Uso</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md font-bold text-primary mb-2">Contato</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md flex items-center gap-2" href="https://api.whatsapp.com/send?phone=5517996157015">
+<span class="material-symbols-outlined text-[18px]">forum</span> WhatsApp
+         </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md flex items-center gap-2" href="tel:17996157015">
+<span class="material-symbols-outlined text-[18px]">call</span> 17 99615-7015
+         </a>
+<div class="flex gap-4 mt-2">
+<a class="text-primary hover:opacity-80 transition-opacity" href="https://www.instagram.com/dradrianoreis/"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span></a>
+<a class="text-primary hover:opacity-80 transition-opacity" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thumb_up</span></a>
+<a class="text-primary hover:opacity-80 transition-opacity" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_display</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

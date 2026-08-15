@@ -1,0 +1,27 @@
+# build output
+dist/
+.output/
+
+# dependencies
+node_modules/
+
+# environment variables
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# local config (MCP servers, etc)
+.mcp.json
+
+# astro
+.astro/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+npm-debug.log*
+.claude/

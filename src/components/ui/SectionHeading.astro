@@ -1,0 +1,25 @@
+﻿---
+interface Props {
+  eyebrow: string;
+  align?: 'left' | 'center';
+  dark?: boolean;
+  class?: string;
+}
+
+const { eyebrow, align = 'left', dark = false, class: className } = Astro.props;
+
+const alignClass = align === 'center' ? 'text-center items-center mx-auto' : 'text-left items-start';
+const eyebrowColor = dark ? 'text-blue-lighter' : 'text-blue';
+const eyebrowDash = dark ? 'bg-blue-lighter/70' : 'bg-blue';
+const titleColor = dark ? 'text-white' : 'text-navy-700';
+---
+
+<div class={['flex flex-col gap-5', alignClass, className].filter(Boolean).join(' ')}>
+  <span class={['inline-flex items-center gap-3 label-caps font-500', eyebrowColor, align === 'center' ? 'justify-center' : ''].filter(Boolean).join(' ')}>
+    <span class={['w-7 h-px', eyebrowDash].join(' ')}></span>
+    {eyebrow}
+  </span>
+  <h2 class={['font-display font-light text-[30px] leading-[1.12] md:text-[50px]', titleColor].join(' ')}>
+    <slot />
+  </h2>
+</div>

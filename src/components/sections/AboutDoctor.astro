@@ -1,0 +1,53 @@
+﻿---
+import Container from '@/components/ui/Container.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+
+import Button from '@/components/ui/Button.astro';
+import SocialProofLine from '@/components/ui/SocialProofLine.astro';
+import SectionChevron from '@/components/ui/SectionChevron.astro';
+import { doctor, buildWhatsAppLink } from '@/data/site';
+import { achievements } from '@/data/achievements';
+---
+
+<section id="sobre" class="relative bg-gradient-to-b from-bg-alt to-bg-soft py-16 md:py-section-gap">
+  <SectionChevron class="bg-bg-alt" />
+  <Container class="grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <SectionHeading eyebrow="Conheça o Dr. Paulo Mansur" class="mb-9">
+        Medicina metabólica <strong class="font-600 text-blue">com propósito</strong>
+      </SectionHeading>
+
+      <div class="flex flex-col gap-6 text-[16px] leading-relaxed text-slate max-w-[520px]">
+        <p>
+          Me formei acreditando que a nutrologia vai muito além de exames e números na balança — ela trata da capacidade das pessoas de viverem plenamente. Cada paciente que chega ao Instituto Longevitare carrega uma história, uma rotina e um objetivo.
+        </p>
+        <p>
+          Com mais de {doctor.yearsOfPractice} anos de prática clínica, desenvolvi um olhar atento para o que realmente importa: entender o problema na raiz, explicar de forma clara e oferecer o caminho mais seguro e efetivo para cada caso — sem promessas fáceis.
+        </p>
+      </div>
+
+      <div class="flex flex-col mt-9 mb-10 max-w-[520px]">
+        {achievements.map((item, i) => (
+          <div class={`flex items-center gap-3 text-[15px] text-ink ${i === 0 ? 'pb-4 border-b border-[#b9c7d2]' : 'pt-4'}`}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0d2b47" class="shrink-0"><path d="M7 3h10v5a5 5 0 01-10 0V3zM10 14h4v4h3v2H7v-2h3z" /></svg>
+            <span><strong class="font-700">{item.title}</strong> — <em class="not-italic text-slate">{item.subtitle}</em></span>
+          </div>
+        ))}
+      </div>
+
+      <Button href={buildWhatsAppLink()} target="_blank">Agendar minha avaliação</Button>
+      <SocialProofLine class="mt-6" />
+    </div>
+
+    <div class="relative">
+      <div class="w-full rounded-2xl overflow-hidden shadow-xl" style="aspect-ratio: 4/5;">
+        <img
+          src="/img/foto-dr-paulo-usar2.webp"
+          alt="Dr. Paulo Mansur"
+          class="w-full h-full object-cover object-center"
+        />
+      </div>
+
+    </div>
+  </Container>
+</section>

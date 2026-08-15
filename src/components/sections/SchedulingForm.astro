@@ -1,0 +1,133 @@
+---
+import Container from '@/components/ui/Container.astro';
+import Button from '@/components/ui/Button.astro';
+import SocialProofLine from '@/components/ui/SocialProofLine.astro';
+import ArrowUpRightIcon from '@/components/icons/arrow-up-right-icon.astro';
+import MailIcon from '@/components/icons/mail-icon.astro';
+import InstagramIcon from '@/components/icons/instagram-icon.astro';
+import { buildWhatsAppLink, contact, social, whatsapp } from '@/data/site';
+
+const inputClass =
+  'w-full border-[1.6px] border-border rounded-xl px-4 py-[15px] text-[16px] text-[#16283a] bg-white outline-none focus:border-blue transition-colors';
+const labelClass = 'flex flex-col gap-2.5 text-sm text-slate';
+---
+
+<section id="agendar" class="grid md:grid-cols-2 bg-bg-alt">
+  <div class="p-6 md:pl-[80px] md:pr-16 md:py-24 md:border-r border-border-soft flex flex-col justify-center">
+    <span class="flex items-center gap-3 label-caps font-500 text-blue-light mb-5">
+      <span class="w-7 h-px bg-blue-light"></span>
+      Chega de viver adiando
+    </span>
+    <h2 class="font-display font-light text-[30px] leading-[1.12] md:text-[50px] text-navy-700 mb-7">
+      Agende a sua <strong class="font-600">consulta comigo</strong>
+    </h2>
+    <p class="text-[16px] leading-relaxed text-slate max-w-sm mb-10">
+      Preencha o formulário ou fale direto pelo WhatsApp — a equipe responde para confirmar o melhor horário.
+    </p>
+
+
+    <div class="flex flex-col gap-3 mb-10">
+      <a
+        href={social.doctorInstagram.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-3.5 p-3.5 rounded-xl border border-border-soft bg-white hover:border-blue-pale/50 hover:shadow-[0_8px_20px_rgba(13,43,71,0.08)] transition-all"
+      >
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue/10 text-blue shrink-0 group-hover:bg-blue group-hover:text-white transition-colors">
+          <InstagramIcon class="w-5 h-5" />
+        </span>
+        <div>
+          <p class="text-xs text-slate-light uppercase tracking-wide">Dr. Paulo Mansur</p>
+          <p class="text-[15px] font-600 text-ink">{social.doctorInstagram.handle}</p>
+        </div>
+      </a>
+      <a
+        href={social.instituteInstagram.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-3.5 p-3.5 rounded-xl border border-border-soft bg-white hover:border-blue-pale/50 hover:shadow-[0_8px_20px_rgba(13,43,71,0.08)] transition-all"
+      >
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue/10 text-blue shrink-0 group-hover:bg-blue group-hover:text-white transition-colors">
+          <InstagramIcon class="w-5 h-5" />
+        </span>
+        <div>
+          <p class="text-xs text-slate-light uppercase tracking-wide">Instituto Longevitare</p>
+          <p class="text-[15px] font-600 text-ink">{social.instituteInstagram.handle}</p>
+        </div>
+      </a>
+    </div>
+
+    <Button href={buildWhatsAppLink()} target="_blank" variant="whatsapp">Enviar mensagem no WhatsApp</Button>
+  </div>
+
+  <div class="p-6 md:pr-[80px] md:pl-16 md:py-24 flex flex-col justify-center">
+    <h3 class="text-2xl font-700 text-[#16283a] mb-2.5">Formulário de agendamento</h3>
+    <p class="text-[15px] leading-relaxed text-slate mb-8 max-w-md">
+      Preencha os dados abaixo para agendar sua consulta no Instituto Longevitare com o Dr. Paulo Mansur.
+    </p>
+
+    <form id="scheduling-form" class="flex flex-col gap-6 max-w-lg">
+      <label class={labelClass} for="nome">
+        Nome completo
+        <input class={inputClass} type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome completo" required />
+      </label>
+
+      <label class={labelClass} for="telefone">
+        Seu WhatsApp
+        <input
+          class={inputClass}
+          type="tel"
+          id="telefone"
+          name="telefone"
+          autocomplete="tel"
+          placeholder="(00) 0 0000-0000"
+          pattern="[0-9()+\-\s]{10,}"
+          required
+        />
+      </label>
+
+      <label class={labelClass} for="email">
+        E-mail
+        <input class={inputClass} type="email" id="email" name="email" autocomplete="email" placeholder="email@email.com" required />
+      </label>
+
+      <label class={labelClass} for="sexo">
+        Sexo
+        <select class={inputClass} id="sexo" name="sexo" required>
+          <option value="Feminino">Feminino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Prefiro não informar">Prefiro não informar</option>
+        </select>
+      </label>
+
+      <label class="flex items-start gap-3 text-sm leading-relaxed text-slate" for="termos">
+        <input class="w-[18px] h-[18px] mt-0.5 accent-blue shrink-0" type="checkbox" id="termos" name="termos" required />
+        <span>Declaro que li e entendi que este formulário não substitui consulta médica presencial nem atendimento de urgência.</span>
+      </label>
+
+      <button type="submit" class="btn-primary justify-center mt-1">
+        <span>Quero Agendar minha avaliação</span>
+        <span class="btn-primary-icon">
+          <ArrowUpRightIcon class="w-4 h-4" />
+        </span>
+      </button>
+
+      <SocialProofLine class="justify-center" />
+    </form>
+  </div>
+</section>
+
+<script define:vars={{ waNumber: whatsapp.number }}>
+  const form = document.getElementById('scheduling-form');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const nome = data.get('nome');
+    const email = data.get('email');
+
+    const message = `Olá! Meu nome é ${nome}. Gostaria de agendar minha avaliação com o Dr. Paulo Mansur.`;
+  });
+</script>

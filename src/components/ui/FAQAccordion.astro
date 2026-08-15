@@ -1,0 +1,32 @@
+﻿---
+import PlusIcon from '@/components/icons/plus-icon.astro';
+
+interface Props {
+  items: { question: string; answer: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="flex flex-col gap-4">
+  {items.map((item, i) => (
+    <details class="group rounded-2xl bg-gradient-to-b from-[#fdfdfd] to-[#f4f6f7] shadow-[0_10px_24px_rgba(13,43,71,0.07)]">
+      <summary class="flex items-center justify-between gap-5 px-7 py-6 cursor-pointer select-none">
+        <span class="text-ink text-[17px]"><span class="text-blue font-500">{String(i + 1).padStart(2, '0')} | </span>{item.question}</span>
+        <PlusIcon class="plus-icon shrink-0 w-5 h-5 text-slate transition-transform duration-200" />
+      </summary>
+      <p class="text-slate leading-relaxed px-7 pb-6 m-0 max-w-2xl">
+        {item.answer}
+      </p>
+    </details>
+  ))}
+</div>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .plus-icon {
+    transform: rotate(45deg);
+  }
+</style>

@@ -1,0 +1,41 @@
+﻿---
+import StarRating from '@/components/ui/StarRating.astro';
+
+interface Props {
+  count?: string;
+  dark?: boolean;
+  class?: string;
+}
+
+const { count = '35 mil+ pacientes atendidos', dark = false, class: className } = Astro.props;
+
+const borderColor = dark ? '#0d2440' : '#ffffff';
+const textColor = dark ? 'text-[#c2d3e0]' : 'text-slate';
+
+// Avatares realistas de pacientes (pravatar.cc — fotos gratuitas e consistentes por ID)
+const avatars = [
+  { src: 'https://i.pravatar.cc/60?img=47', alt: 'Paciente' },
+  { src: 'https://i.pravatar.cc/60?img=12', alt: 'Paciente' },
+  { src: 'https://i.pravatar.cc/60?img=33', alt: 'Paciente' },
+];
+---
+
+<div class={['flex items-center gap-3 flex-wrap', className].filter(Boolean).join(' ')}>
+  <div class="flex items-center">
+    {avatars.map((avatar, i) => (
+      <img
+        src={avatar.src}
+        alt={avatar.alt}
+        width="30"
+        height="30"
+        class={[
+          'rounded-full object-cover object-center',
+          i > 0 ? '-ml-2.5' : '',
+        ].join(' ')}
+        style={`border: 2px solid ${borderColor}; width:30px; height:30px;`}
+      />
+    ))}
+  </div>
+  <span class={['text-sm font-500', textColor].join(' ')}>{count}</span>
+  <StarRating variant={dark ? 'dark' : 'navy'} />
+</div>

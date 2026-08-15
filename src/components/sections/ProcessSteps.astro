@@ -1,0 +1,35 @@
+﻿---
+import Container from '@/components/ui/Container.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Button from '@/components/ui/Button.astro';
+import SocialProofLine from '@/components/ui/SocialProofLine.astro';
+import { procedures } from '@/data/procedures';
+import { buildWhatsAppLink } from '@/data/site';
+---
+
+<section id="metodo" class="bg-gradient-to-b from-bg-alt to-bg py-16 md:py-section-gap">
+  <Container class="grid md:grid-cols-[0.85fr_1.15fr] gap-16">
+    <div>
+      <SectionHeading eyebrow="Nutrologia &amp; Longevidade" class="mb-7">
+        Procedimentos <strong class="font-600 text-blue">e tratamentos</strong>
+      </SectionHeading>
+      <p class="text-[16px] leading-relaxed text-slate max-w-sm mb-10">
+        Desde o acompanhamento clínico contínuo até intervenções não cirúrgicas, sempre com a técnica mais adequada para o seu caso.
+      </p>
+      <Button href={buildWhatsAppLink()} target="_blank">Agendar minha avaliação</Button>
+      <SocialProofLine class="mt-6" />
+    </div>
+
+    <div class="flex flex-col">
+      {procedures.map((proc, i) => (
+        <div class={`grid grid-cols-[44px_1fr] gap-3.5 py-6 ${i > 0 ? 'border-t border-[#a9bccb]' : ''}`}>
+          <span class="font-sans text-[15px] font-500 text-blue pt-1">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 class="text-[19px] font-500 text-[#16283a] mb-2">{proc.title}</h3>
+            <p class="text-[15px] leading-relaxed text-slate max-w-lg">{proc.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,31 @@
+﻿---
+import '@/styles/app.css';
+import Footer from '@/components/sections/Footer.astro';
+import FloatingCTA from '@/components/ui/FloatingCTA.astro';
+import { seo } from '@/data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = seo.title, description = seo.description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- Pixels de tracking (Meta/GA) entram aqui quando o deploy for configurado -->
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <FloatingCTA />
+  </body>
+</html>
