@@ -6,7 +6,7 @@ export const doctor = {
   role: 'Fundador do Instituto Longevitare',
   cofounder: 'Lelian Lacerda',
   specialtiesLine:
-    'Nutrologia, emagrecimento saudável, jejum intermitente, balão gástrico, endoscopia, sarcopenia e longevidade.',
+    'Saúde metabólica, emagrecimento saudável, jejum intermitente, sarcopenia e longevidade.',
 };
 
 export const clinic = {
@@ -47,7 +47,7 @@ export const heroBadges = [
 ];
 
 export const seo = {
-  title: 'Instituto Longevitare — Dr. Paulo Mansur | Nutrologia e Longevidade em Vitória/ES',
+  title: 'Instituto Longevitare — Dr. Paulo Mansur | Saúde metabólica e longevidade em Vitória/ES',
   description:
-    'Emagrecimento saudável, jejum intermitente, balão gástrico, endoscopia, sarcopenia e longevidade com método clínico. Mais de 25 anos de medicina e 35 mil pacientes tratados.',
+    'Emagrecimento saudável, jejum intermitente, sarcopenia e longevidade com método clínico. Mais de 25 anos de medicina e 35 mil pacientes tratados.',
 };

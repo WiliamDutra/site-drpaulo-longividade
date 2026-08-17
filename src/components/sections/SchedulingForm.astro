@@ -12,8 +12,8 @@ const inputClass =
 const labelClass = 'flex flex-col gap-2.5 text-sm text-slate';
 ---
 
-<section id="agendar" class="grid md:grid-cols-2 bg-bg-alt">
-  <div class="p-6 md:pl-[80px] md:pr-16 md:py-24 md:border-r border-border-soft flex flex-col justify-center">
+<section id="agendar" class="bg-bg-alt">
+  <div class="max-w-xl mx-auto px-6 py-16 md:py-24 flex flex-col">
     <span class="flex items-center gap-3 label-caps font-500 text-blue-light mb-5">
       <span class="w-7 h-px bg-blue-light"></span>
       Chega de viver adiando
@@ -60,6 +60,8 @@ const labelClass = 'flex flex-col gap-2.5 text-sm text-slate';
     <Button href={buildWhatsAppLink()} target="_blank" variant="whatsapp">Enviar mensagem no WhatsApp</Button>
   </div>
 
+  {/* Formulário de agendamento comentado temporariamente */}
+  {/*
   <div class="p-6 md:pr-[80px] md:pl-16 md:py-24 flex flex-col justify-center">
     <h3 class="text-2xl font-700 text-[#16283a] mb-2.5">Formulário de agendamento</h3>
     <p class="text-[15px] leading-relaxed text-slate mb-8 max-w-md">
@@ -115,8 +117,10 @@ const labelClass = 'flex flex-col gap-2.5 text-sm text-slate';
       <SocialProofLine class="justify-center" />
     </form>
   </div>
+  */}
 </section>
 
+{/* Script do formulário comentado temporariamente
 <script define:vars={{ waNumber: whatsapp.number }}>
   const form = document.getElementById('scheduling-form');
 
@@ -131,3 +135,4 @@ const labelClass = 'flex flex-col gap-2.5 text-sm text-slate';
     const message = `Olá! Meu nome é ${nome}. Gostaria de agendar minha avaliação com o Dr. Paulo Mansur.`;
   });
 </script>
+*/}

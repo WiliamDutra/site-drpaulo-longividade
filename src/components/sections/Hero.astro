@@ -4,6 +4,7 @@ import Button from '@/components/ui/Button.astro';
 import SocialProofLine from '@/components/ui/SocialProofLine.astro';
 import FloatingBadge from '@/components/ui/FloatingBadge.astro';
 import { doctor, buildWhatsAppLink, heroBadges } from '@/data/site';
+import { painSection, painBullets } from '@/data/painPoints';
 
 const gridBgStyle = `background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px); background-size: 20px 30px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%); mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);`;
 ---
@@ -15,14 +16,19 @@ const gridBgStyle = `background-image: linear-gradient(to right, #e2e8f0 1px, tr
       <div class="flex flex-col gap-6 max-w-[520px]">
         <span class="inline-flex items-center gap-2.5 label-caps font-600 text-blue bg-blue/10 rounded-full px-4 py-2 w-fit">
           <span class="w-1.5 h-1.5 rounded-full bg-blue shrink-0"></span>
-          {doctor.name} | Nutrólogo
+          {doctor.name}, Médico · {doctor.crm}
         </span>
-        <h1 class="font-display font-light leading-[1.06] tracking-tight text-navy-700 text-[42px] md:text-[68px]">
-          Conheça o <strong class="font-600">Instituto Longevitare</strong>
+        <h1 class="font-display font-light leading-[1.06] tracking-tight text-navy-700 text-[34px] md:text-[46px]">
+          {painSection.titleMain} <strong class="font-600">{painSection.titleAccent}</strong>
         </h1>
-        <p class="text-[17px] leading-relaxed text-slate text-wrap-pretty">
-          Mais de {doctor.yearsOfPractice} anos de medicina e {doctor.patientsServed} pacientes tratados com ciência, critério clínico e acompanhamento real — não com dietas da moda.
-        </p>
+        <ul class="flex flex-col gap-3">
+          {painBullets.map((bullet) => (
+            <li class="flex items-start gap-3 text-[15px] leading-relaxed text-slate">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-light mt-2 shrink-0"></span>
+              <span>{bullet.prefix}<strong class="font-700 text-ink">{bullet.bold}</strong>{bullet.suffix}</span>
+            </li>
+          ))}
+        </ul>
         <div>
           <Button href={buildWhatsAppLink()} target="_blank">Agendar minha avaliação</Button>
         </div>
@@ -34,7 +40,7 @@ const gridBgStyle = `background-image: linear-gradient(to right, #e2e8f0 1px, tr
           <img src="/img/logo-marca-semfundo.webp" alt="Instituto Longevitare" class="h-14 md:h-16 w-auto" />
           <span class="leading-tight text-right">
             <span class="block font-display text-2xl md:text-[32px] tracking-wide text-slate">Instituto Longevitare</span>
-            <span class="block text-[10px] md:text-sm tracking-[0.14em] uppercase text-slate-light">Nutrologia e Longevidade</span>
+            <span class="block text-[10px] md:text-sm tracking-[0.14em] uppercase text-slate-light">Saúde metabólica e Longevidade</span>
           </span>
         </div>
 

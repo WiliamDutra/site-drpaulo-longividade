@@ -6,24 +6,19 @@ export interface Specialty {
 
 export const specialties: Specialty[] = [
   {
-    title: 'Nutrologia',
+    title: 'Avaliação Metabólica',
     description: 'Diagnóstico metabólico completo para entender a raiz do problema antes de qualquer plano.',
     icon: 'lucide:stethoscope',
+  },
+  {
+    title: 'Emagrecimento Saudável',
+    description: 'Perda de peso sustentável, sem dietas restritivas ou promessas milagrosas.',
+    icon: 'lucide:scale',
   },
   {
     title: 'Jejum Intermitente',
     description: 'Protocolo individualizado, com acompanhamento clínico — não um modismo de internet.',
     icon: 'lucide:clock-3',
-  },
-  {
-    title: 'Balão Gástrico',
-    description: 'Alternativa não cirúrgica para acelerar resultados em casos que precisam de mais suporte.',
-    icon: 'lucide:balloon',
-  },
-  {
-    title: 'Endoscopia',
-    description: 'Avaliação direta do trato digestivo, feita na própria estrutura do instituto.',
-    icon: 'lucide:scan',
   },
   {
     title: 'Sarcopenia',
@@ -34,5 +29,10 @@ export const specialties: Specialty[] = [
     title: 'Longevidade',
     description: 'Plano de saúde de longo prazo, não apenas um número na balança.',
     icon: 'lucide:infinity',
+  },
+  {
+    title: 'Composição Corporal',
+    description: 'Avaliação de gordura, massa magra e água corporal para acompanhar a evolução real do tratamento.',
+    icon: 'lucide:percent',
   },
 ];

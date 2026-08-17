@@ -10,6 +10,6 @@ export const achievements: Achievement[] = [
   },
   {
     title: 'Mais de 25 anos de prática clínica',
-    subtitle: 'Nutrologia, emagrecimento saudável e longevidade.',
+    subtitle: 'Saúde metabólica, emagrecimento saudável e longevidade.',
   },
 ];

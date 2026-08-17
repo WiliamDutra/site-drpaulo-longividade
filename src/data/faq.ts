@@ -21,16 +21,11 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Quais exames são feitos na própria clínica?',
     answer:
-      'A estrutura do instituto permite realizar avaliações como endoscopia no mesmo local, sem depender de encaminhamentos externos para etapas essenciais do diagnóstico.',
+      'A estrutura do instituto permite realizar exames laboratoriais e de composição corporal no mesmo local, sem depender de encaminhamentos externos para etapas essenciais do diagnóstico.',
   },
   {
     question: 'Quanto tempo leva para ver resultado?',
     answer:
       'Varia por caso — o método prioriza resultado que se sustenta, não velocidade. Na consulta inicial o Dr. Paulo define uma expectativa realista para o seu quadro.',
-  },
-  {
-    question: 'O balão gástrico é indicado para o meu caso?',
-    answer:
-      'Só é possível responder isso após avaliação clínica. É uma das ferramentas do tratamento, indicada em casos específicos — não uma solução padrão para todos os pacientes.',
   },
 ];
